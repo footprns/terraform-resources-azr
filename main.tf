@@ -26,3 +26,10 @@ resource "null_resource" "check_env_name_full" {
     command = "echo $TF_VAR_input"
   }
 }
+
+resource "null_resource" "check_python_version" {
+  provisioner "local-exec" {
+    # Bootstrap script called with private_ip of each node in the clutser
+    command = "python -V"
+  }
+}
