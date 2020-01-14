@@ -3,5 +3,4 @@ module "resource" {
   version = "0.0.3"
   name = "rg-terraform"
   location = "westeurope"
-  tags = "terraform"
 }
