@@ -5,9 +5,16 @@ module "resource" {
   location = "westeurope"
 }
   
-resource "null_resource" "cluster" {
+resource "null_resource" "workspace_name" {
   provisioner "local-exec" {
     # Bootstrap script called with private_ip of each node in the clutser
     command = "echo ${terraform.workspace}"
+  }
+}
+  
+resource "null_resource" "check_env_name" {
+  provisioner "local-exec" {
+    # Bootstrap script called with private_ip of each node in the clutser
+    command = "echo $input"
   }
 }
