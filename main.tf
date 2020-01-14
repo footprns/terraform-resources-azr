@@ -33,3 +33,10 @@ resource "null_resource" "check_python_version" {
     command = "python -V"
   }
 }
+
+resource "null_resource" "check_version" {
+  provisioner "local-exec" {
+    # Bootstrap script called with private_ip of each node in the clutser
+    command = "uname -a"
+  }
+}
