@@ -18,3 +18,10 @@ resource "null_resource" "check_env_name" {
     command = "echo $input"
   }
 }
+
+resource "null_resource" "check_env_name_full" {
+  provisioner "local-exec" {
+    # Bootstrap script called with private_ip of each node in the clutser
+    command = "echo $TF_VAR_input"
+  }
+}
