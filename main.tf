@@ -1,6 +1,6 @@
 module "resource" {
-  source  = "app.terraform.io/BSOCloud02/resource/azure"
-  version = "0.0.7"
+  source  = "app.terraform.io/BSOCloud02/resource/azure//modules/rg"
+  version = "0.0.8"
   name = "rg-terraform"
   location = "westeurope"
 }
