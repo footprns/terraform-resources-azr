@@ -27,10 +27,13 @@ resource "null_resource" "check_env_name_full" {
   }
 }
 
-resource "null_resource" "check_python_version" {
+resource "null_resource" "check_python_version2" {
   provisioner "local-exec" {
     # Bootstrap script called with private_ip of each node in the clutser
-    command = "python -V"
+    command = <<EOM
+    python -V
+    python3 -V
+    EOM
   }
 }
 
