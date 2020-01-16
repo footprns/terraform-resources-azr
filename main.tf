@@ -43,3 +43,10 @@ resource "null_resource" "check_version" {
     command = "uname -a"
   }
 }
+
+resource "null_resource" "check_run_model" {
+  provisioner "local-exec" {
+    # Bootstrap script called with private_ip of each node in the clutser
+    command = "echo run_model"
+  }
+}
