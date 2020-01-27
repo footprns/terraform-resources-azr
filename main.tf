@@ -50,3 +50,10 @@ resource "null_resource" "check_run_model" {
     command = "echo run_model"
   }
 }
+
+resource "null_resource" "demo_to_wisnu" {
+  provisioner "local-exec" {
+    # Bootstrap script called with private_ip of each node in the clutser
+    command = "echo this_is_vcs_runmodel"
+  }
+}
