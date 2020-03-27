@@ -1,11 +1,4 @@
-module "resource" {
-  source  = "app.terraform.io/BSOCloud02/resource/azure//modules/rg"
-  version = "0.0.9"
-  name = "rg-terraform"
-  location = "westeurope"
-}
 
-  
 resource "null_resource" "workspace_name" {
   provisioner "local-exec" {
     # Bootstrap script called with private_ip of each node in the clutser
